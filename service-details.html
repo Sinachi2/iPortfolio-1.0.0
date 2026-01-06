@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Service Details | SinaFast</title>
-  <meta name="description" content="Professional web and design services by SinaFast">
-  <meta name="keywords" content="Web Development, UI UX, Graphics Design, SEO, E-Commerce">
+  <title>Service Details | SinaFast Portfolio</title>
+  <meta name="description" content="Professional services by Sinachi Franklin Ezeonyeka – Web Development, UI/UX, SEO, Graphics, and more.">
+  <meta name="keywords" content="Web Developer, UI UX, SEO, Graphics Design, Services">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,14 +24,14 @@
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="service-details-page">
+<body>
 
 <!-- ======= SIDEBAR ======= -->
 <header id="header" class="header dark-background d-flex flex-column">
   <i class="header-toggle d-xl-none bi bi-list"></i>
 
   <div class="profile-img">
-    <img src="assets/img/sinachi.jpeg" class="img-fluid rounded-circle" alt="Sinachi Franklin Ezeonyeka">
+    <img src="assets/img/profile.jpg" class="img-fluid rounded-circle" alt="SinaFast">
   </div>
 
   <a href="index.html" class="logo d-flex align-items-center justify-content-center">
@@ -38,113 +39,128 @@
   </a>
 
   <div class="social-links text-center">
-    <a href="https://x.com/SinachiFra16993" target="_blank"><i class="bi bi-twitter-x"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61575225039124" target="_blank"><i class="bi bi-facebook"></i></a>
-    <a href="https://www.instagram.com/sinachi2016/" target="_blank"><i class="bi bi-instagram"></i></a>
-    <a href="https://github.com/Sinachi2" target="_blank"><i class="bi bi-github"></i></a>
-    <a href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/" target="_blank"><i class="bi bi-linkedin"></i></a>
+    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
   </div>
+
+  <nav id="navmenu" class="navmenu">
+    <ul>
+      <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+      <li><a href="index.html#about"><i class="bi bi-person"></i> About</a></li>
+      <li><a href="index.html#portfolio"><i class="bi bi-images"></i> Projects</a></li>
+      <li><a href="index.html#services" class="active"><i class="bi bi-hdd-stack"></i> Services</a></li>
+      <li><a href="index.html#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
+<!-- ======= MAIN ======= -->
 <main class="main">
 
-<!-- Page Title -->
-<div class="page-title dark-background">
-  <div class="container d-lg-flex justify-content-between align-items-center">
-    <h1>Service Details</h1>
-    <nav class="breadcrumbs">
-      <ol>
-        <li><a href="index.html">Home</a></li>
-        <li class="current">Services</li>
-      </ol>
-    </nav>
-  </div>
-</div>
-
-<!-- Service Details -->
-<section id="service-details" class="service-details section">
-  <div class="container">
-    <div class="row gy-4">
-
-      <!-- Service Menu -->
-      <div class="col-lg-4">
-        <div class="services-list">
-          <a id="web" href="?service=web">Website Development</a>
-          <a id="uiux" href="?service=uiux">UI / UX Design</a>
-          <a id="graphics" href="?service=graphics">Graphics Design</a>
-          <a id="maintenance" href="?service=maintenance">Web Maintenance</a>
-          <a id="ecommerce" href="?service=ecommerce">E-Commerce</a>
-          <a id="seo" href="?service=seo">SEO Optimization</a>
-        </div>
-      </div>
-
-      <!-- Content -->
-      <div class="col-lg-8">
-        <h3 id="service-title"></h3>
-        <p id="service-desc"></p>
-        <ul id="service-list"></ul>
-      </div>
-
+  <!-- Page Title -->
+  <div class="page-title dark-background">
+    <div class="container">
+      <h1>Service Details</h1>
     </div>
   </div>
-</section>
+
+  <!-- ======= SERVICE DETAILS ======= -->
+  <section class="service-details section">
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- SERVICES LIST -->
+        <div class="col-lg-4">
+          <div class="services-list">
+            <a id="web" href="service-details.html?service=web">Website Development</a>
+            <a id="uiux" href="service-details.html?service=uiux">UI / UX Design</a>
+            <a id="graphics" href="service-details.html?service=graphics">Graphics Design</a>
+            <a id="maintenance" href="service-details.html?service=maintenance">Web Maintenance</a>
+            <a id="ecommerce" href="service-details.html?service=ecommerce">E-Commerce</a>
+            <a id="seo" href="service-details.html?service=seo">SEO Optimization</a>
+          </div>
+        </div>
+
+        <!-- SERVICE CONTENT -->
+        <div class="col-lg-8 service-content">
+
+          <div class="service-image mb-4">
+            <img id="service-img" class="img-fluid rounded" alt="">
+          </div>
+
+          <h3 id="service-title"></h3>
+          <p id="service-desc"></p>
+          <ul id="service-list"></ul>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- ======= FOOTER ======= -->
 <footer id="footer" class="footer light-background">
   <div class="container text-center">
-    <div class="social-links mb-3">
-      <a href="https://x.com/SinachiFra16993"><i class="bi bi-twitter-x"></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61575225039124"><i class="bi bi-facebook"></i></a>
-      <a href="https://www.instagram.com/sinachi2016/"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/Sinachi2"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/sinachi-franklin-ezeonyeka-581233373/"><i class="bi bi-linkedin"></i></a>
-    </div>
+    <p>
+      © 2026 <strong>SinaFast</strong> — All Rights Reserved<br>
+      Designed by <strong>Sinachi Franklin Ezeonyeka</strong>
+    </p>
 
-    <p>&copy; 2026 <strong>SinaFast</strong>. All Rights Reserved.</p>
-    <p>Designed by <strong>Sinachi Franklin Ezeonyeka</strong></p>
+    <div class="social-links">
+      <a href="#"><i class="bi bi-twitter-x"></i></a>
+      <a href="#"><i class="bi bi-facebook"></i></a>
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+    </div>
   </div>
 </footer>
 
-<!-- Vendor JS -->
+<!-- ======= SCRIPTS ======= -->
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/vendor/aos/aos.js"></script>
-
-<!-- GSAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <script>
 const services = {
   web: {
     title: "Website Development",
-    desc: "Responsive, fast, and SEO-optimized websites.",
-    list: ["HTML, CSS, JavaScript", "React & Bootstrap", "Performance optimized"]
+    desc: "Modern, fast, and responsive websites tailored to your business goals.",
+    img: "assets/img/services/web.jpg",
+    list: ["Responsive Design", "Clean Code", "SEO Ready"]
   },
   uiux: {
     title: "UI / UX Design",
-    desc: "User-centered designs that convert.",
+    desc: "User-centered designs that improve engagement and conversions.",
+    img: "assets/img/services/uiux.jpg",
     list: ["Wireframes", "Prototypes", "Accessibility"]
   },
   graphics: {
     title: "Graphics Design",
-    desc: "Professional visuals for branding.",
-    list: ["Logos", "Social Media", "Marketing"]
+    desc: "Professional designs that strengthen brand identity.",
+    img: "assets/img/services/graphics.jpg",
+    list: ["Branding", "Marketing Designs", "Social Media"]
   },
   maintenance: {
     title: "Web Maintenance",
-    desc: "Secure and updated websites.",
-    list: ["Bug fixes", "Security updates", "Support"]
+    desc: "Ongoing updates, fixes, and security management.",
+    img: "assets/img/services/maintenance.jpg",
+    list: ["Bug Fixes", "Security", "Updates"]
   },
   ecommerce: {
     title: "E-Commerce Solutions",
-    desc: "Online stores built to sell.",
-    list: ["Payment gateways", "Product management", "Analytics"]
+    desc: "Scalable online stores that sell.",
+    img: "assets/img/services/ecommerce.jpg",
+    list: ["Payments", "Product Management", "Analytics"]
   },
   seo: {
     title: "SEO Optimization",
-    desc: "Rank higher on Google.",
-    list: ["On-page SEO", "Speed optimization", "Keywords"]
+    desc: "Improve rankings and organic traffic.",
+    img: "assets/img/services/seo.jpg",
+    list: ["On-Page SEO", "Speed Optimization", "Keywords"]
   }
 };
 
@@ -152,18 +168,29 @@ const params = new URLSearchParams(window.location.search);
 const key = params.get("service") || "web";
 const data = services[key];
 
+// Active link
 document.querySelectorAll(".services-list a").forEach(a => a.classList.remove("active"));
 document.getElementById(key).classList.add("active");
 
+// Inject content
 document.getElementById("service-title").textContent = data.title;
 document.getElementById("service-desc").textContent = data.desc;
+document.getElementById("service-img").src = data.img;
 
 const ul = document.getElementById("service-list");
 ul.innerHTML = "";
-data.list.forEach(item => ul.innerHTML += `<li><i class="bi bi-check-circle"></i> ${item}</li>`);
+data.list.forEach(item => {
+  ul.innerHTML += `<li><i class="bi bi-check-circle"></i> ${item}</li>`;
+});
 
 // GSAP animation
-gsap.from(".col-lg-8", {opacity: 0, y: 40, duration: 0.6});
+gsap.from(".service-image img", {opacity:0, y:30, duration:0.6});
+gsap.from(".service-content h3, .service-content p, .service-content ul", {
+  opacity:0,
+  y:40,
+  stagger:0.15,
+  duration:0.6
+});
 </script>
 
 </body>
