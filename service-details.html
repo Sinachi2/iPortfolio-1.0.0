@@ -1,197 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinaFast | Professional Services</title>
+    
+    <meta name="description" content="Explore professional Web Development, UI/UX, and SEO services by Sinachi Franklin Ezeonyeka (SinaFast).">
+    <meta name="keywords" content="Web Development, UI/UX Design, SEO, SinaFast, Graphics Design, E-commerce">
 
-  <title>Service Details | SinaFast Portfolio</title>
-  <meta name="description" content="Professional services by Sinachi Franklin Ezeonyeka – Web Development, UI/UX, SEO, Graphics, and more.">
-  <meta name="keywords" content="Web Developer, UI UX, SEO, Graphics Design, Services">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+    <style>
+        /* --- GLOBAL THEME VARIABLES --- */
+        :root {
+            --sidebar-bg: #040b14;
+            --primary-blue: #007bff;
+            --accent-hover: #0056b3;
+            --light-bg: #f8f9fa;
+            --text-dark: #272829;
+            --text-muted: #6c757d;
+        }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            color: var(--text-dark); 
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
 
-  <!-- Vendor CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+        /* --- SIDEBAR NAVIGATION --- */
+        #header {
+            width: 300px;
+            height: 100vh;
+            position: fixed;
+            left: 0; top: 0;
+            background: var(--sidebar-bg);
+            padding: 20px;
+            z-index: 997;
+            overflow-y: auto;
+            transition: all 0.5s;
+        }
+        .profile-img img {
+            width: 120px;
+            border: 8px solid #2c2f3f;
+            display: block;
+            margin: 0 auto;
+        }
+        .sitename {
+            font-size: 24px;
+            color: #fff;
+            font-weight: 700;
+            margin-top: 15px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+        .social-links a {
+            font-size: 18px;
+            color: #fff;
+            background: #212431;
+            padding: 8px 0;
+            margin-right: 4px;
+            border-radius: 50%;
+            width: 36px; height: 36px;
+            display: inline-block;
+            transition: 0.3s;
+            text-align: center;
+        }
+        .social-links a:hover { background: var(--primary-blue); }
 
-  <!-- Main CSS -->
-  <link href="assets/css/main.css" rel="stylesheet">
+        .navmenu { padding: 30px 0 0 0; }
+        .navmenu a { 
+            display: flex; 
+            align-items: center; 
+            color: #a8a9b4; 
+            padding: 12px 15px; 
+            text-decoration: none; 
+            transition: 0.3s; 
+            font-size: 15px;
+        }
+        .navmenu a i { font-size: 20px; padding-right: 10px; color: #6f7180; }
+        .navmenu a:hover, .navmenu .active { color: #fff; }
+        .navmenu a:hover i, .navmenu .active i { color: var(--primary-blue); }
+
+        /* --- MAIN CONTENT LAYOUT --- */
+        main { margin-left: 300px; transition: 0.5s; }
+        .page-header { 
+            background: #fff; 
+            padding: 80px 30px 40px; 
+            border-bottom: 1px solid #eee;
+        }
+
+        /* --- INTERNAL SIDEBAR (Category Switcher) --- */
+        .category-nav .list-group-item {
+            border: none;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 10px !important;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .category-nav .active {
+            background-color: var(--primary-blue) !important;
+            color: white !important;
+            transform: translateX(5px);
+        }
+
+        /* --- CONTENT CARD & ELEMENTS --- */
+        .content-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+        }
+        .main-visual {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            object-fit: cover;
+        }
+        .feature-box {
+            background: #f0f7ff;
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px 25px;
+            margin-bottom: 12px;
+            border-radius: 0 10px 10px 0;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        .feature-box i { color: var(--primary-blue); margin-right: 15px; }
+
+        .cta-btn {
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: 0.3s;
+            margin-top: 30px;
+            border: none;
+        }
+        .cta-btn:hover {
+            background: var(--accent-hover);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,123,255,0.3);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #e3f2fd;
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 1199px) {
+            #header { left: -300px; }
+            main { margin-left: 0; }
+            .page-header { padding-top: 100px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ======= SIDEBAR ======= -->
-<header id="header" class="header dark-background d-flex flex-column">
-  <i class="header-toggle d-xl-none bi bi-list"></i>
-
-  <div class="profile-img">
-    <img src="assets/img/profile.jpg" class="img-fluid rounded-circle" alt="SinaFast">
-  </div>
-
-  <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-    <h1 class="sitename">SinaFast</h1>
-  </a>
-
-  <div class="social-links text-center">
-    <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-    <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-    <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-    <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-  </div>
-
-  <nav id="navmenu" class="navmenu">
-    <ul>
-      <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
-      <li><a href="index.html#about"><i class="bi bi-person"></i> About</a></li>
-      <li><a href="index.html#portfolio"><i class="bi bi-images"></i> Projects</a></li>
-      <li><a href="index.html#services" class="active"><i class="bi bi-hdd-stack"></i> Services</a></li>
-      <li><a href="index.html#contact"><i class="bi bi-envelope"></i> Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<!-- ======= MAIN ======= -->
-<main class="main">
-
-  <!-- Page Title -->
-  <div class="page-title dark-background">
-    <div class="container">
-      <h1>Service Details</h1>
-    </div>
-  </div>
-
-  <!-- ======= SERVICE DETAILS ======= -->
-  <section class="service-details section">
-    <div class="container">
-      <div class="row gy-4">
-
-        <!-- SERVICES LIST -->
-        <div class="col-lg-4">
-          <div class="services-list">
-            <a id="web" href="service-details.html?service=web">Website Development</a>
-            <a id="uiux" href="service-details.html?service=uiux">UI / UX Design</a>
-            <a id="graphics" href="service-details.html?service=graphics">Graphics Design</a>
-            <a id="maintenance" href="service-details.html?service=maintenance">Web Maintenance</a>
-            <a id="ecommerce" href="service-details.html?service=ecommerce">E-Commerce</a>
-            <a id="seo" href="service-details.html?service=seo">SEO Optimization</a>
-          </div>
+    <header id="header" class="header d-flex flex-column">
+        <i class="header-toggle d-xl-none bi bi-list"></i>
+        <div class="profile-img"><img src="assets/img/profile.jpg" class="img-fluid rounded-circle" alt="SinaFast"></div>
+        <a href="index.html" class="logo"><h1 class="sitename">SinaFast</h1></a>
+        
+        <div class="social-links text-center mb-3">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
         </div>
 
-        <!-- SERVICE CONTENT -->
-        <div class="col-lg-8 service-content">
+        <nav class="navmenu">
+            <ul>
+                <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+            </ul>
+        </nav>
+    </header>
 
-          <div class="service-image mb-4">
-            <img id="service-img" class="img-fluid rounded" alt="">
-          </div>
+    <main>
+        <section class="page-header px-4">
+            <div class="container-fluid">
+                <h1 class="fw-bold">Service Details</h1>
+                <p class="text-muted mb-0">Discover my tailored professional solutions for your digital success.</p>
+            </div>
+        </section>
 
-          <h3 id="service-title"></h3>
-          <p id="service-desc"></p>
-          <ul id="service-list"></ul>
+        <section class="p-4 p-md-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-4 col-xl-3 mb-4">
+                        <div class="list-group category-nav" id="service-menu">
+                            </div>
+                    </div>
 
-        </div>
+                    <div class="col-lg-8 col-xl-9">
+                        <div class="content-card" id="main-panel">
+                            <img id="service-img" src="" alt="Service Banner" class="main-visual">
+                            <h2 id="service-title" class="fw-bold mb-3"></h2>
+                            <p id="service-desc" class="text-secondary mb-4" style="line-height: 1.8;"></p>
+                            
+                            <h5 class="fw-bold mb-3">Core Expertise & Deliverables</h5>
+                            <div id="features-container"></div>
 
-      </div>
-    </div>
-  </section>
+                            <a href="index.html#contact" class="cta-btn">
+                                <i class="bi bi-chat-dots me-2"></i> Discuss Your Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-</main>
+        <footer>
+            <div class="container">
+                <p class="mb-1">© 2026 <strong>SinaFast</strong> — All Rights Reserved.</p>
+                <p class="small text-muted mb-3">Designed by Sinachi Franklin Ezeonyeka</p>
+                <div class="social-links">
+                    <a href="#" style="color:#555"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" style="color:#555"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+    </main>
 
-<!-- ======= FOOTER ======= -->
-<footer id="footer" class="footer light-background">
-  <div class="container text-center">
-    <p>
-      © 2026 <strong>SinaFast</strong> — All Rights Reserved<br>
-      Designed by <strong>Sinachi Franklin Ezeonyeka</strong>
-    </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        const services = {
+            "web-dev": {
+                title: "Website Development",
+                img: "assets/img/service.jpg",
+                desc: "I provide professional front-end and full-stack development services, creating fast, responsive websites that mirror your brand. Specialized in HTML, CSS, JavaScript, and React, I ensure every project is built with clean, maintainable code optimized for performance and SEO.",
+                features: ["Responsive Design for all devices", "Clean and Maintainable Code", "SEO Ready Architecture", "Performance Optimization", "Cross-browser Compatibility"]
+            },
+            "ui-ux": {
+                title: "UI / UX Design",
+                img: "assets/img/service.jpg",
+                desc: "Designing user-centered interfaces that maximize engagement. I focus on intuitive layouts, wireframes, and interactive prototypes to ensure your users have a seamless and accessible experience.",
+                features: ["Wireframes & Prototyping", "Accessibility (WCAG) Compliance", "User Flow Design", "Branding & Visual Identity", "Interaction Design"]
+            },
+            "graphics": {
+                title: "Graphics Design",
+                img: "assets/img/service.jpg",
+                desc: "Striking visuals tailored to your brand's identity. From logo creation to social media marketing materials, I use the Adobe Creative Suite to enhance your brand presence.",
+                features: ["Logo & Branding Design", "Flyers, Posters & Banners", "Social Media Content", "Typography Mastery", "Figma & Illustrator Expertise"]
+            },
+            "maintenance": {
+                title: "Web Maintenance",
+                img: "assets/img/service.jpg",
+                desc: "Ongoing support to ensure your website remains secure and up-to-date. I provide regular checks, content updates, and bug fixes to prevent downtime and maintain high performance.",
+                features: ["Error Troubleshooting", "Security Monitoring", "Content Revisions", "Regular Backups", "Speed Optimization"]
+            },
+            "ecommerce": {
+                title: "E-Commerce Solutions",
+                img: "assets/img/service.jpg",
+                desc: "Scalable online stores built to convert. I integrate secure payment gateways, inventory management, and analytics to help your business grow in the digital marketplace.",
+                features: ["Payment Gateway Integration", "Inventory Management", "User-Friendly Checkout", "Order Tracking Systems", "Conversion Analytics"]
+            },
+            "seo": {
+                title: "SEO Optimization",
+                img: "assets/img/service.jpg",
+                desc: "Boost your organic traffic through strategic On-Page and Off-Page SEO. I optimize site structure and content to help you rank higher and reach more customers.",
+                features: ["Keyword Strategy", "Meta Data Optimization", "Page Speed Performance", "Backlink Strategy", "Analytics & Reporting"]
+            }
+        };
 
-    <div class="social-links">
-      <a href="#"><i class="bi bi-twitter-x"></i></a>
-      <a href="#"><i class="bi bi-facebook"></i></a>
-      <a href="#"><i class="bi bi-instagram"></i></a>
-      <a href="#"><i class="bi bi-linkedin"></i></a>
-    </div>
-  </div>
-</footer>
+        function renderPage() {
+            const menu = document.getElementById('service-menu');
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id') || 'web-dev';
+            const data = services[id];
 
-<!-- ======= SCRIPTS ======= -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+            // 1. Generate Navigation
+            Object.keys(services).forEach(key => {
+                const a = document.createElement('a');
+                a.href = `?id=${key}`;
+                a.className = `list-group-item list-group-item-action ${key === id ? 'active' : ''}`;
+                a.innerText = services[key].title;
+                menu.appendChild(a);
+            });
 
-<script>
-const services = {
-  web: {
-    title: "Website Development",
-    desc: "Modern, fast, and responsive websites tailored to your business goals.",
-    img: "assets/img/servicesjpg",
-    list: ["Responsive Design", "Clean Code", "SEO Ready"]
-  },
-  uiux: {
-    title: "UI / UX Design",
-    desc: "User-centered designs that improve engagement and conversions.",
-    img: "assets/img/servicesjpg",
-    list: ["Wireframes", "Prototypes", "Accessibility"]
-  },
-  graphics: {
-    title: "Graphics Design",
-    desc: "Professional designs that strengthen brand identity.",
-    img: "assets/img/servicesjpg",
-    list: ["Branding", "Marketing Designs", "Social Media"]
-  },
-  maintenance: {
-    title: "Web Maintenance",
-    desc: "Ongoing updates, fixes, and security management.",
-    img: "assets/img/servicesjpg",
-    list: ["Bug Fixes", "Security", "Updates"]
-  },
-  ecommerce: {
-    title: "E-Commerce Solutions",
-    desc: "Scalable online stores that sell.",
-    img: "assets/img/servicesjpg",
-    list: ["Payments", "Product Management", "Analytics"]
-  },
-  seo: {
-    title: "SEO Optimization",
-    desc: "Improve rankings and organic traffic.",
-    img: "assets/img/servicesjpg",
-    list: ["On-Page SEO", "Speed Optimization", "Keywords"]
-  }
-};
+            // 2. Load Content
+            if(data) {
+                document.title = `${data.title} | SinaFast Services`;
+                document.getElementById('service-title').innerText = data.title;
+                document.getElementById('service-desc').innerText = data.desc;
+                document.getElementById('service-img').src = data.img;
+                
+                const container = document.getElementById('features-container');
+                container.innerHTML = data.features.map(f => 
+                    `<div class="feature-box"><i class="bi bi-check-circle-fill"></i> ${f}</div>`
+                ).join('');
 
-const params = new URLSearchParams(window.location.search);
-const key = params.get("service") || "web";
-const data = services[key];
+                // 3. GSAP Animations
+                gsap.from("#service-img", { opacity: 0, scale: 0.95, duration: 0.8, ease: "power2.out" });
+                gsap.from("#service-title, #service-desc, .cta-btn", { 
+                    opacity: 0, y: 30, duration: 0.7, stagger: 0.2, ease: "power1.out" 
+                });
+                gsap.from(".feature-box", { 
+                    opacity: 0, x: 30, duration: 0.5, stagger: 0.1, delay: 0.6 
+                });
+            }
+        }
 
-// Active link
-document.querySelectorAll(".services-list a").forEach(a => a.classList.remove("active"));
-document.getElementById(key).classList.add("active");
-
-// Inject content
-document.getElementById("service-title").textContent = data.title;
-document.getElementById("service-desc").textContent = data.desc;
-document.getElementById("service-img").src = data.img;
-
-const ul = document.getElementById("service-list");
-ul.innerHTML = "";
-data.list.forEach(item => {
-  ul.innerHTML += `<li><i class="bi bi-check-circle"></i> ${item}</li>`;
-});
-
-// GSAP animation
-gsap.from(".service-image img", {opacity:0, y:30, duration:0.6});
-gsap.from(".service-content h3, .service-content p, .service-content ul", {
-  opacity:0,
-  y:40,
-  stagger:0.15,
-  duration:0.6
-});
-</script>
-
+        window.onload = renderPage;
+    </script>
 </body>
 </html>
