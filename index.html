@@ -172,20 +172,40 @@
                         <a href="#portfolio"><i class="bi bi-images navicon"></i> My Portfolio</a>
                     </li>
 
-                    <ul>
-                        <li><a href="#">More</a></li>
-
-                        <li>
-                            <a href="#services"><i class="bi bi-hdd-stack navicon"></i> My Services</a>
-                        </li>
-                        <li>
-                            <a href="#testimonials"><i class="bi bi-chat-left-quote navicon"></i> Testimonials</a>
-                        </li>
-                        <li>
-                            <a href="#sponsor" class=""><i class="bi bi-cash-stack navicon"></i>Sponsor Me</a>
-                        </li>
-                        <li>
-                            <a href="#contact"><i class="bi bi-envelope navicon"></i> Contact Me</a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="moreDropdown"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                            >
+                                More
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="#services"
+                                        ><i class="bi bi-hdd-stack navicon"></i> My Services</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#testimonials"
+                                        ><i class="bi bi-chat-left-quote navicon"></i> Testimonials</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#sponsor"
+                                        ><i class="bi bi-cash-stack navicon"></i> Sponsor Me</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#contact"
+                                        ><i class="bi bi-envelope navicon"></i> Contact Me</a
+                                    >
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </ul>
@@ -1351,103 +1371,126 @@
             <!-- /Testimonials Section -->
 
             <!-- Sponsor Section -->
-<!-- Sponsor Section -->
-<section id="sponsor" class="py-5 bg-light">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Support My Work</h2>
-      <p class="text-muted">You can sponsor me through Bank Transfer or Cryptocurrency. Click “Copy” to copy the account or wallet details instantly!</p>
-    </div>
+            <!-- Sponsor Section -->
+            <section id="sponsor" class="py-5 bg-light">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold">Support My Work</h2>
+                        <p class="text-muted">
+                            You can sponsor me through Bank Transfer or Cryptocurrency. Click “Copy” to copy the account
+                            or wallet details instantly!
+                        </p>
+                    </div>
 
-    <div class="row justify-content-center g-4">
+                    <div class="row justify-content-center g-4">
+                        <!-- Bank Transfer Card -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm border-0 text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3"><i class="bi bi-bank me-2"></i>Bank Transfer</h5>
+                                    <p class="card-text">Send your support directly to my bank account:</p>
+                                    <ul class="list-unstyled text-start">
+                                        <li><strong>Bank Name:</strong> Fidelity Bank</li>
+                                        <li><strong>Account Name:</strong> SINACHI FRANKLIN EZEONYEKA</li>
+                                        <li>
+                                            <strong>Account Number:</strong> <span id="bankAccount">6152779644</span>
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-primary mt-3" onclick="copyToClipboard('bankAccount')">
+                                        Copy Details
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
 
-      <!-- Bank Transfer Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 text-center">
-          <div class="card-body">
-            <h5 class="card-title mb-3"><i class="bi bi-bank me-2"></i>Bank Transfer</h5>
-            <p class="card-text">Send your support directly to my bank account:</p>
-            <ul class="list-unstyled text-start">
-              <li><strong>Bank Name:</strong> Fidelity Bank</li>
-              <li><strong>Account Name:</strong> SINACHI FRANKLIN EZEONYEKA</li>
-              <li><strong>Account Number:</strong> <span id="bankAccount">6152779644</span></li>
-            </ul>
-            <button class="btn btn-primary mt-3" onclick="copyToClipboard('bankAccount')">Copy Details</button>
-          </div>
-        </div>
-      </div>
+                        <!-- Bitcoin Card -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm border-0 text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">
+                                        <i class="bi bi-currency-bitcoin me-2"></i>Bitcoin (BTC)
+                                    </h5>
+                                    <p class="card-text">Send Bitcoin to this wallet address:</p>
+                                    <p class="fw-bold" id="btcWallet">1A2b3C4d5E6f7G8h9I0j</p>
+                                    <button class="btn btn-warning" onclick="copyToClipboard('btcWallet')">
+                                        Copy BTC Wallet
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
 
-      <!-- Bitcoin Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 text-center">
-          <div class="card-body">
-            <h5 class="card-title mb-3"><i class="bi bi-currency-bitcoin me-2"></i>Bitcoin (BTC)</h5>
-            <p class="card-text">Send Bitcoin to this wallet address:</p>
-            <p class="fw-bold" id="btcWallet">1A2b3C4d5E6f7G8h9I0j</p>
-            <button class="btn btn-warning" onclick="copyToClipboard('btcWallet')">Copy BTC Wallet</button>
-          </div>
-        </div>
-      </div>
+                        <!-- Ethereum Card -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm border-0 text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">
+                                        <i class="bi bi-currency-ethereum me-2"></i>Ethereum (ETH)
+                                    </h5>
+                                    <p class="card-text">Send Ethereum to this wallet address:</p>
+                                    <p class="fw-bold" id="ethWallet">0xAbC1234567890dEfGh</p>
+                                    <button class="btn btn-primary" onclick="copyToClipboard('ethWallet')">
+                                        Copy ETH Wallet
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
 
-      <!-- Ethereum Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 text-center">
-          <div class="card-body">
-            <h5 class="card-title mb-3"><i class="bi bi-currency-ethereum me-2"></i>Ethereum (ETH)</h5>
-            <p class="card-text">Send Ethereum to this wallet address:</p>
-            <p class="fw-bold" id="ethWallet">0xAbC1234567890dEfGh</p>
-            <button class="btn btn-primary" onclick="copyToClipboard('ethWallet')">Copy ETH Wallet</button>
-          </div>
-        </div>
-      </div>
+                        <!-- USDT Card -->
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm border-0 text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">
+                                        <i class="bi bi-currency-dollar me-2"></i>USDT (TRC20)
+                                    </h5>
+                                    <p class="card-text">Send USDT (TRC20) to this wallet address:</p>
+                                    <p class="fw-bold" id="usdtWallet">T1234aBcD5678EfGh90</p>
+                                    <button class="btn btn-success" onclick="copyToClipboard('usdtWallet')">
+                                        Copy USDT Wallet
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-      <!-- USDT Card -->
-      <div class="col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm border-0 text-center">
-          <div class="card-body">
-            <h5 class="card-title mb-3"><i class="bi bi-currency-dollar me-2"></i>USDT (TRC20)</h5>
-            <p class="card-text">Send USDT (TRC20) to this wallet address:</p>
-            <p class="fw-bold" id="usdtWallet">T1234aBcD5678EfGh90</p>
-            <button class="btn btn-success" onclick="copyToClipboard('usdtWallet')">Copy USDT Wallet</button>
-          </div>
-        </div>
-      </div>
+                    <div class="text-center mt-5">
+                        <p class="text-muted">
+                            Thank you for your support! Your contribution helps me continue creating innovative projects
+                            and content.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-    </div>
+            <!-- JavaScript for Copy to Clipboard -->
+            <script>
+                function copyToClipboard(elementId) {
+                    const text = document.getElementById(elementId).innerText;
+                    navigator.clipboard
+                        .writeText(text)
+                        .then(() => {
+                            const tooltip = document.createElement("div");
+                            tooltip.innerText = "Copied: " + text;
+                            tooltip.style.position = "fixed";
+                            tooltip.style.bottom = "20px";
+                            tooltip.style.left = "50%";
+                            tooltip.style.transform = "translateX(-50%)";
+                            tooltip.style.background = "#333";
+                            tooltip.style.color = "#fff";
+                            tooltip.style.padding = "10px 20px";
+                            tooltip.style.borderRadius = "5px";
+                            tooltip.style.zIndex = "1000";
+                            document.body.appendChild(tooltip);
+                            setTimeout(() => tooltip.remove(), 2000);
+                        })
+                        .catch((err) => alert("Failed to copy!"));
+                }
+            </script>
 
-    <div class="text-center mt-5">
-      <p class="text-muted">Thank you for your support! Your contribution helps me continue creating innovative projects and content.</p>
-    </div>
-  </div>
-</section>
-
-<!-- JavaScript for Copy to Clipboard -->
-<script>
-  function copyToClipboard(elementId) {
-    const text = document.getElementById(elementId).innerText;
-    navigator.clipboard.writeText(text)
-      .then(() => {
-        const tooltip = document.createElement('div');
-        tooltip.innerText = "Copied: " + text;
-        tooltip.style.position = 'fixed';
-        tooltip.style.bottom = '20px';
-        tooltip.style.left = '50%';
-        tooltip.style.transform = 'translateX(-50%)';
-        tooltip.style.background = '#333';
-        tooltip.style.color = '#fff';
-        tooltip.style.padding = '10px 20px';
-        tooltip.style.borderRadius = '5px';
-        tooltip.style.zIndex = '1000';
-        document.body.appendChild(tooltip);
-        setTimeout(() => tooltip.remove(), 2000);
-      })
-      .catch(err => alert("Failed to copy!"));
-  }
-</script>
-
-<!-- Bootstrap Icons CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
+            <!-- Bootstrap Icons CDN -->
+            <link
+                rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+            />
 
             <!-- /Sponsor Section -->
 
@@ -1473,12 +1516,11 @@
                                         <h3>Work Address</h3>
                                         <p>78 Fadahunsi St, Lagos, Nigeria</p>
                                         <br />
-
                                     </div>
                                 </div>
                                 <!-- End Info Item -->
-                                 <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-                                      <i class="bi bi-house"></i>
+                                <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                                    <i class="bi bi-house"></i>
                                     <div>
                                         <h3>Home Address</h3>
                                         <p>1 Eshinlokun St, Lagos, Nigeria</p>
